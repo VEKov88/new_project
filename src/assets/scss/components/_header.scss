@@ -1,0 +1,115 @@
+.header {
+	background-image: url(/assets/img/images/header_bg.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	background-color: #fff;
+	color: #fff;
+	font-family: "GothamPro";
+		&__logo {
+			display: flex;
+			flex-direction: row;
+			margin-top: 30px;
+		}
+		&__titel {
+			margin: 275px auto 45px;
+			font-size: 90px;
+			text-transform: uppercase;
+  			text-align: center;
+  			letter-spacing: 62px;
+  				@include media-breakpoint-down(md) {
+					letter-spacing: 37px;
+				}
+				@include media-breakpoint-down(sm) {
+					letter-spacing: 6px;
+					font-size: 50px;
+				}
+		}
+		&__text {
+			font-size: 14px;
+			font-weight: bold;
+			text-align: center;
+			letter-spacing: 4px;
+		}
+		
+}
+.btn-link {
+	display: block;
+	width: 56%;
+	margin: 53px auto 242px;
+	color: #fff;
+	text-transform: uppercase;
+	text-decoration: none;
+	font-size: 14px;
+  	font-family: "GothamPro";
+  	border: 2px solid #e6eff8;
+  	border-radius: 20px;
+  	padding: 2.8% 0 2.8% 13%;
+  		@include media-breakpoint-down(lg) {
+			padding-left: 9%;
+		}
+  		@include media-breakpoint-down(sm) {
+			padding-left: 7%;
+		}
+  		&__arrow {
+			margin-left: 10%;
+		}
+		&:hover {
+			text-decoration: none;
+			color: #fff;
+		}
+		&-competence {
+			border: 2px solid #9bb5d2;
+			margin: 0 auto 115px;
+			color: #9bb5d2;
+				&:hover, &:focus {
+					color: #9bb5d2;
+				}
+		}
+		&-about {
+			border: 2px solid #9bb5d2;
+			color: #9bb5d2;
+			margin: 30px 0 95px;
+				@include media-breakpoint-down(lg) {
+					padding-left: 9%;
+				}
+  				@include media-breakpoint-down(sm) {
+					padding-left: 7%;
+				}
+				&:hover, &:focus {
+					color: #9bb5d2;
+				}
+		}
+		&-form {
+			border: 2px solid #9bb5d2;
+			margin: 0 auto 115px;
+			color: #9bb5d2;
+				&:hover, &:focus {
+					color: #9bb5d2;
+				}
+				@include media-breakpoint-up(md) {
+					display: none;
+				}
+		}
+}
+.logo {
+	display: block;
+	width: 35px;
+	height: 45px;
+	margin-right: 6px;
+}
+.name {
+	font-size: 21px;
+	font-family: "GothamPro";
+	color: #fff;
+	line-height: 1.2;
+	text-align-last: left;
+}
+.tell {
+	margin-top: 55px;
+	font-size: 18px;
+    font-family: "Play-Regular";
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+}

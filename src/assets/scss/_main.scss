@@ -1,0 +1,382 @@
+/*--------------------------------------------------
+----------------------------------------------------
+first_section
+----------------------------------------------------
+--------------------------------------------------*/
+.about-me {
+	font-family: "GothamPro";
+	text-align: left;
+		&__tagline {
+			margin-top: 200px;
+			margin-bottom: 40px;
+	  		font-size: 12px;
+	  		color: rgb(204, 190, 182);
+	  		font-weight: bold;
+	  		text-transform: uppercase;
+	  		line-height: 3;
+		}
+		&__titel {
+			font-family: "GothamPro";
+	  		font-size: 48px;
+	  		color: rgb(95, 137, 183);
+	  		line-height: 0.75;
+		}
+		&__text {
+			margin-top: 50px;
+			margin-bottom: 45px;
+	  		font-size: 14px;
+	  		color: rgb(159, 151, 147);
+	  		line-height: 1.714;
+		}
+		&__superiority {
+  			font-size: 16px;
+  			font-family: "GothamPro";
+  			color: rgb(95, 137, 183);
+  			line-height: 2.25;
+  			text-align: left;
+  			white-space: nowrap;
+  			margin-bottom: 20px;
+  				@include media-breakpoint-down(md) {
+  					margin-bottom: 0px;
+  				}
+  				@include media-breakpoint-down(lg) {
+  					margin-bottom: 20px;
+  				}
+  				@include media-breakpoint-down(xl) {
+  					margin-bottom: 0px;
+  				}
+		}
+		&__img {
+			margin-right: 20px;
+		}
+}
+.outer-circle {
+  	border: 1px solid #a5bdd7;
+  	border-radius: 50%;
+  	width: 506px;
+  	height: 506px;
+  	margin: 200px 0 0 35px;
+  		&:before {
+  			content: "";
+  			position: absolute;
+  			top: 250px;
+  			left: 480px;
+  			background-image: url(/assets/img/images/girl_hand.png);
+  			width: 215px;
+  			height: 220px;
+  				@include media-breakpoint-down(lg) {
+  					top: 250px;
+  					left: 445px;
+  				}
+  		}
+  		@include media-breakpoint-down(lg) {
+  			margin-left: 0px;
+  		}
+}
+.inner-circle {
+	margin: 20px auto;
+	border: 1px solid #7096bf;
+  	border-radius: 50%;
+  	background: #9bb5d2 url(/assets/img/images/girl.jpg) no-repeat;
+  	width: 465px;
+  	height: 465px;
+}
+/*--------------------------------------------------
+----------------------------------------------------
+second_section
+----------------------------------------------------
+--------------------------------------------------*/
+.second_section {
+	background-color: #38424e;
+	background-image: url(/assets/img/images/bg_second-section.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+		&--first {
+			margin-bottom: -30px;
+		}
+}
+.competence {
+	font-family: "GothamPro";
+  	color: #fff;
+		&__titel {
+  			font-size: 24px;
+  			text-align: center;
+  			margin: 70px auto 55px;
+  				&-property {
+  			 		color: rgb(95, 137, 183);
+  			 		margin-top: 110px;
+  			 	}
+		}
+		&__text {
+			margin-bottom: 75px;
+  			font-size: 14px;
+  			line-height: 1.714;
+  			text-align: center;
+  				&-property {
+  			 		color: rgb(159, 151, 147);
+  			 		margin-bottom: 90px;
+  			 	}
+		}
+}
+.flip-container {
+  	margin-bottom: 30px;
+	perspective: 1000;
+		&-vertical {
+			position: relative;
+		}
+}
+.flip-container:hover .flipper, .flip-container.hover .flipper {
+	transform: rotateY(180deg);
+			&-vertical {
+				transform: rotateX(-180deg);
+			}
+}
+.flip-container, .front, .back {
+	width: 100%;
+  	height: 365px;
+}
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+	position: relative;
+		&-vertical {
+			transform-origin: 100% 182.5px;
+		}
+}
+.front, .back {
+	backface-visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.front {
+	z-index: 2;
+}
+.back {
+	position: relative;
+	transform: rotateY(180deg);
+		&:before, &:after {
+			content: "";
+			position: absolute;
+			width: 25px;
+			height: 25px;
+			border-bottom: 3px solid rgba(255, 255, 255, 0.702);
+			border-left: 3px solid rgba(255, 255, 255, 0.702);
+			bottom: 10px;
+			left: 10px;
+			border-bottom-left-radius: 13px;
+			transform: rotate(0deg);
+		}
+		&:after {
+			left: auto;
+			right: 10px;
+			transform: rotate(270deg);
+		}
+		&-vertical {
+			transform: rotateX(180deg);
+		}
+}
+.card-width {
+	max-width: 265px;
+	@include media-breakpoint-up(sm) {
+
+	}
+}
+.back .competence-card__name {
+	display: inline-block;
+	&:before, &:after {
+			content: "";
+			position: absolute;
+			width: 25px;
+			height: 25px;
+			border-bottom: 3px solid rgba(255, 255, 255, 0.702);
+			border-left: 3px solid rgba(255, 255, 255, 0.702);
+			top: 10px;
+			left: 10px;
+			border-bottom-left-radius: 13px;
+			transform: rotate(90deg);
+		}
+		&:after {
+			left: auto;
+			right: 10px;
+			transform: rotate(180deg);
+		}
+}
+.competence-card {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	border-radius: 6px;
+  	width: 100%;
+  	height: 365px;
+  	text-align: center;
+  		&__name {
+  			font-size: 11px;
+  			font-family: "Quicksand-Bold";
+  			letter-spacing: 2px;
+  			color: rgba(255, 255, 255, 0.702);
+  			text-transform: uppercase;
+  			line-height: 1.714;
+
+  		}
+  		&__img {
+  			display: flex;
+  			flex-direction: column;
+  			justify-content: center;
+  			height: 141px;
+  		}
+  		&__titel {
+  			display: flex;
+    		flex-direction: column;
+    		justify-content: center;
+    		padding: 0 20px;
+  			font-size: 20px;
+  			font-family: "Quicksand-Bold";
+  			letter-spacing: 3px;
+  			color: rgb(255, 255, 255);
+  			text-transform: uppercase;
+  			line-height: 1;
+  		}
+  		&__text {
+  			padding: 0 20px;
+    		font-size: 12px;
+  			font-family: "Quicksand-Bold";
+  			letter-spacing: 2px;
+  			color: rgb(255, 255, 255);
+  			line-height: 1;
+  				&--back {
+  					overflow: hidden;
+  					height: 200px;
+  				}
+  		}
+  		&-post1 {
+  			background-color: #c89b7a;
+  		}
+  		&-post2 {
+  			background-color: #83d38c;
+  		}
+  		&-post3 {
+  			background-color: #ad84be;
+  		}
+  		&-post4 {
+  			background-color: #ffa370;
+  		}
+  		&-post5 {
+  			background-color: #e3d55b;
+  		}
+  		&-post6 {
+  			background-color: #888ad4;
+  		}
+  		&-post7 {
+  			background-color: #f98077;
+  		}
+  		&-post8 {
+  			background-color: #adc186;
+  		}
+}
+.competence-description {
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+  	background-color: #fff;
+  	margin: 6px auto;
+  	font-size: 16px;
+  	font-family: "GothamPro";
+  	color: rgb(57, 57, 57);
+  	line-height: 2.25;
+  	text-align: left;
+  		&__numeral {
+  			font-size: 14px;
+  			font-family: "MyriadPro-Regular";
+  			color: rgb(57, 57, 57);
+  			text-align: left;
+  			transform: matrix( 0,1,-1,0,0,0);
+  			margin-left: 50px;
+  		}
+  		&__img {
+  			margin-left: 10px;
+  			margin-right: 25px;
+  			width: 36px;
+  		}
+  		&__text {
+  			padding: 16px 0;
+  		}
+  		&:before {
+  			display: none;
+  			content: "";
+  			position: absolute;
+  			top: 68%;
+    		left: 55px;
+  			background-image: url(/assets/img/icons/competence-arrow.png);
+  			background-repeat: no-repeat;
+  			width: 8px;
+  			height: 55px;
+  			z-index: 1;
+  		}
+  		@include media-breakpoint-up(sm) {
+  			&:before {
+  				display: block;
+  			}
+  		}
+  		&-post1{
+  			margin-top: 0;
+  		}
+  		&-post4 {
+  			margin-bottom: 35px;
+	  			&:before {
+	              display: none;
+	            }
+  		}
+}
+/*--------------------------------------------------
+----------------------------------------------------
+three_section
+----------------------------------------------------
+--------------------------------------------------*/
+.documentation {
+  	font-family: "GothamPro";
+  	text-align: center;
+	&__titel {
+		margin: 110px auto 45px;
+  		font-size: 24px;
+  		color: rgb(95, 137, 183);
+	}
+	&__text {
+  		font-size: 14px;
+  		color: rgb(159, 151, 147);
+  		line-height: 1.714;
+	}
+}
+.card {
+	display: flex;
+    flex-direction: column;
+  	background-color: #fff;
+ 	width: 95%;
+  	margin: 100px auto 135px;
+  		&__certificate {
+  			padding: 40px;
+  			background-color: #fff;
+  			box-shadow: 0px 0px 43px 0px rgba(0, 0, 0, 0.11);
+  			margin: 0 auto;
+  		}
+  		&__foto {
+  			align-self: center;
+    		max-width: 120px;
+    		max-height: 153px;
+    		display: block;
+  		}
+  		&__certificate-description {
+			margin-top: 35px;
+			font-size: 16px;
+  			color: rgb(95, 137, 183);
+  			line-height: 1.563;
+  		}
+  		@include media-breakpoint-down(sm) {
+  			margin: 40px auto;
+    	}
+}

@@ -1,0 +1,230 @@
+.footer {
+	background-image: url(/assets/img/images/footer-bg.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	font-family: "GothamPro";
+	color: #fff;
+		&__titel {
+			margin: 115px auto 25px;
+			font-size: 36px;
+		    text-align: center;
+		     & span {
+		     	font-weight: bold;
+		     	color: #e0eefc;
+		     }
+		}
+		&__text {
+			font-size: 14px;
+  			text-align: center;
+  				@include media-breakpoint-down(md) {
+					display: none;
+				}
+		}
+		&__copyright {
+			margin: 25px auto 65px;
+			font-size: 16px;
+  			color: rgb(139, 139, 139);
+		}
+}
+.contact-form {
+	margin: 85px auto 73px;
+		@include media-breakpoint-down(sm) {
+			display: none;
+		}
+		&__submit {
+			width: 100%;
+		  	font-size: 16px;
+		  	font-family: "GothamPro";
+		  	color: #000;
+		  	line-height: 2;
+		  	text-align: center;
+		  	border: none;
+		  	border-radius: 5px;
+		  	background-color: rgb(224, 238, 252);
+		  	padding: 14px 0;
+		}
+		&__element {
+			width: 115%;
+			font-size: 16px;
+			font-family: "GothamPro";
+			color: rgb(184, 184, 184);
+			line-height: 2;
+			border: none;
+  			border-radius: 5px;
+  			background-color: #fff;
+  			padding: 14px 0 14px 10%;
+		}
+		&__checked {
+			display: inline-block;
+			position: relative;
+			padding-left: 35px;
+			margin-top: 30px;
+			&:before {
+				content: "";
+				position: absolute;
+				width: 25px;
+				height: 25px;
+				top: 50%;
+				left: 0;
+				border: 2px solid #ccc;
+				transition: all .3s ease-in-out;
+				transform: translateY(-50%);
+
+			}
+		}
+		&__checkbox:checked ~ &__checked:before {
+			height: 15px;
+			transform: translateY(-50%) rotate(-45deg);
+			border-top: none;
+			border-right: none;
+		}
+}
+.social {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	margin: 25px 0;
+	padding: 0;
+	list-style-type: none;
+		&__icon {
+			opacity: 0.2;
+				&:hover {
+					opacity: 1;
+				}
+
+		}
+}
+
+
+
+
+.modals-container {
+	flex-direction: column;
+    justify-content: center;
+    align-items: center;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	display: none;
+}
+.overlay {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,.4);
+	z-index: 4;
+}
+.modals {
+	position: relative;
+	border: 2px solid #ccc;
+	border-radius: 8px;
+	background-color: #fff;
+	padding: 20px;
+	max-width: 450px;
+	z-index: 5;
+	&__form {
+		width: 100%;
+	}
+	&__close {
+		display: block;
+    	width: 20px;
+    	height: 20px;
+    	z-index: 10;
+    	top: 15px;
+    	right: 15px;
+		position: absolute;
+		&:hover, &:focus {
+			&:before, &:after {
+				background-color: orange;
+
+			}
+		}
+		&:before, &:after {
+			content: "";
+			top: 50%;
+			left: 50%;
+			position: absolute;
+			width: 20px;
+			height: 2px;
+			background-color: #ccc;
+			transform: translate(-50%,-50%) rotate(-45deg);
+		}
+		&:after {
+			transform: translate(-50%,-50%) rotate(45deg);
+
+		}
+	}
+	&__titel {
+			font-size: 24px;
+			font-family: "GothamPro";
+			color: #333;
+			font-weight: 800;
+			margin-bottom: 20px;
+	}
+	&__btn {
+		display: inline-block;
+		border: 1px solid orange;
+		border-radius: 28px;
+		background-color: transparent;
+		color: #333;
+		padding: 15px 20px;
+		width: 300px;
+		cursor: pointer;
+		font-size: 18px;
+		text-transform: uppercase;
+		text-align: center;
+		font-family: "GothamPro";
+		&:hover, &:focus {
+			background-color: rgba(orange, 0.8);
+			color: #fff;
+		}
+	}
+	&__element {
+		display: inline-block;
+		width: 300px;
+		margin-bottom: 20px;
+		padding: 15px 20px;
+		border: none;
+		border-bottom: 1px solid #ccc;
+		font-size: 18px;
+		font-family: "GothamPro";
+		outline: none;
+		&:hover, &:focus {
+			border-bottom: 1px solid orange;
+		}
+	}
+}
+.modals-active {
+	.modals, .overlay {
+		display: block;
+	}
+}
+
+
+.popup {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	display: none;
+		&__bg {
+			background: rgba(0,0,0,.4);
+			position: absolute;
+			z-index: 1;
+			width: 100%;
+			height: 100%;
+		}
+		&__img {
+			position: relative;
+			z-index: 2;
+			max-width: 90%;
+			max-height: 90%;
+		}
+}
